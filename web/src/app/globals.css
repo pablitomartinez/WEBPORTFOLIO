@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-primary {
+    @apply px-4 py-1 bg-primary text-white
+
+}

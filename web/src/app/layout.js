@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
+// import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { roboto_slab } from "../../public/fonts";
 
-const inter = Inter({ subsets: ["latin"] });
-
+// const roboto_slab = Roboto_Slab({ subsets: ["latin"] });
+ 
 export const metadata = {
   title: "Pablo Martinez",
   description: "Portfolio Full Stack",
@@ -12,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${roboto_slab.className} antialiased bg-primary`} >
         <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
           <div className="w-full flex-none md:w-64" >
             <Navbar />
