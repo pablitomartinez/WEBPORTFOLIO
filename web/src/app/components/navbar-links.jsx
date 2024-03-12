@@ -12,9 +12,10 @@ const links = [
 ];
 
 export default function Navlinks() {
-    const pathname = usePathname;
+  const pathname = usePathname();
+  console.log(pathname);
   return (
-  <>
+    <>
       {links.map((link) => {
         // si uso ico
         // const LinkIcon = link.icon;
@@ -23,16 +24,47 @@ export default function Navlinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-[48px] grow items-center justify-start uppercase gap-2 rounded-md bg-gray-50 p-3 text-md font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+              "flex h-[48px] grow items-center justify-start uppercase gap-2 rounded-md text-terciary p-3 active:text-secondary focus:text-secondary text-md font-medium hover:text-secondary md:flex-none md:justify-center md:p-2 md:px-3",
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,
+                " text-secondary hover:text-secondary transition ease-in-out delay-150":
+                  pathname === link.href,
               }
             )}
           >
-            <p>{link.name}</p>
+            {/* <p className="transition-transform duration-500"> */}
+            {pathname === link.href ? `<${link.name}/>` : link.name}
+            {/* </p> */}
           </Link>
         );
       })}
-  </>
+    </>
   );
 }
+
+
+// version con ICO 
+
+      // {
+      //   links.map((link) => {
+      //     // si uso ico
+      //     // const LinkIcon = link.icon;
+      //     return (
+      //       <Link
+      //         key={link.name}
+      //         href={link.href}
+      //         className={clsx(
+      //           "flex h-[48px] grow items-center justify-start uppercase gap-2 rounded-md text-terciary p-3 active:text-secondary focus:text-secondary text-md font-medium hover:text-secondary md:flex-none md:justify-center md:p-2 md:px-3",
+      //           {
+      //             " text-secondary hover:text-secondary transition ease-in-out delay-150":
+      //               pathname === link.href,
+      //           }
+      //         )}
+      //       >
+      //         {/* <p className="transition-transform duration-500"> */}
+      //         {pathname === link.href ? `<${link.name}/>` : link.name}
+      //         {/* </p> */}
+      //       </Link>
+      //     );
+      //   });
+      // }
+      

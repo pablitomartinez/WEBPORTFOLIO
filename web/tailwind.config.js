@@ -16,7 +16,7 @@ module.exports = {
           DEFAULT: "#92d79a"
         },
 
-        tertiary:{
+        terciary:{
           DEFAULT: "#BEC8CB"
         },
 
@@ -35,5 +35,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ["prettier-plugin-tailwindcss"],
 };
