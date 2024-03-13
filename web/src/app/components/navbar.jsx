@@ -8,12 +8,12 @@ export default function Navbar() {
       {/* logo  */}
       <Link
         href="/"
-        className=" mb-2 flex justify-center pl-6 p-4"
+        className=" mb-2 flex justify-start md:justify-center pl-6 p-4"
       >
         <div className="w-32 text-secondary justify-center md:w-40">&lt;pabloMartinez/&gt;</div>
       </Link>
       {/* items de navbar  */}
-      <div className="flex grow flex-row text-center justify-around space-x-2 md:flex-col md:justify- md:items-center  md:space-x-0 md:space-y-2">
+      <div className="flex flex-row text-center justify-around space-x-2 text-lg md:grow md:flex-col md:justify-center md:text-2xl md:items-center  md:space-x-0 md:space-y-2">
         <Navlinks />
       </div>
     </div>
