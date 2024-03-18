@@ -1,8 +1,7 @@
 "use client";
-import clsx from "clsx";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { useState } from "react";
 
 const links = [
   { name: "About", href: "/about" },
@@ -24,49 +23,18 @@ export default function Navlinks() {
             key={link.name}
             href={link.href}
             className={
-              clsx(
-                'flex h-[48px] items-center justify-start uppercase rounded-md text-terciary text-md font-medium md:flex-none md:justify-center md:p-2 md:px-3',
-                {
-                  'text-secondary': pathname === link.href,
-                }
-              )
-              //   `flex h-[48px] grow items-center justify-start uppercase gap-2 rounded-md text-terciary p-3 text-md font-medium  md:flex-none md:justify-center md:p-2 md:px-3
-              //   ${pathname === link.href ? "focus:text-secondary" : ""}
-              // `
+              "flex h-[48px] items-center justify-start uppercase rounded-md text-terciary transition-colors delay-150 text-md font-medium  md:flex-none md:justify-center md:p-2 md:px-3"
             }
           >
-            <p className="">
+            <motion.p
+              whileHover={{ scale: 1.1 }}
+              className={`${link.href === pathname ? "text-secondary transition ease-in-out delay-150" : " "}`}
+            >
               {pathname === link.href ? `<${link.name}/>` : link.name}
-            </p>
+            </motion.p>
           </Link>
         );
       })}
     </>
   );
 }
-
-// version con ICO
-
-// {
-//   links.map((link) => {
-//     // si uso ico
-//     // const LinkIcon = link.icon;
-//     return (
-//       <Link
-//         key={link.name}
-//         href={link.href}
-//         className={clsx(
-//           "flex h-[48px] grow items-center justify-start uppercase gap-2 rounded-md text-terciary p-3 active:text-secondary focus:text-secondary text-md font-medium hover:text-secondary md:flex-none md:justify-center md:p-2 md:px-3",
-//           {
-//             " text-secondary hover:text-secondary transition ease-in-out delay-150":
-//               pathname === link.href,
-//           }
-//         )}
-//       >
-//         {/* <p className="transition-transform duration-500"> */}
-//         {pathname === link.href ? `<${link.name}/>` : link.name}
-//         {/* </p> */}
-//       </Link>
-//     );
-//   });
-// }
