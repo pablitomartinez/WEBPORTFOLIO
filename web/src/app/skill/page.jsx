@@ -60,8 +60,12 @@ export default function Skill() {
       {/* ----------------------  */}
       {/* izquierda  */}
       <div className="w-[29%] space-y-6">
-        {skills.map((skill) => {
-          return <p className="text-[24px] text-secondary ">{skill}</p>;
+        {skills.map((skill, i) => {
+          return (
+            <p key={i} className="text-[24px] text-secondary ">
+              {skill}
+            </p>
+          );
         })}
       </div>
     </div>
