@@ -37,30 +37,25 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col h-full justify-center">
-      <h2 className=" text-center font-medium text-2xl pb-4 text-secondary">
-        Enviame un mensaje, estare encantado de leerlos
+    <div className="flex flex-col h-full md:justify-center">
+      <h2 className="text-center text-[32px] pb-6 text-terciary">
+        Escribime para estar en contacto
       </h2>
-      {/* separador  */}
-      <div className="relative pt-5">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300"></div>
-        </div>
-      </div>
+
       <section className="">
-        <div className=" items-center px-3 lg:px-20">
-          <div className="flex flex-col w-full max-w-md p-10 mx-auto my-6 transition duration-500 ease-in-out transform rounded-lg md:mt-0">
+        <div>
+          <div className="flex flex-col my-6 transition duration-500 ease-in-out transform rounded-lg md:mt-0">
             <div className="">
-              <div className="">
-                <form action="#" method="POST" className="space-y-6">
-                  {/* REUTILIZABLES  */}
+              <form action="#" method="POST" className="space-y-6">
+                <div className="flex flex-col lg:flex-row lg:space-x-2 md:justify-center ">
                   {/* REEUTILIZABLE EMAIL  */}
-                  <div>
+                  <div className="md:w-full">
                     <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="off"
                       onChange={handleChange}
                       value={values.email}
                       placeholder="Your Email"
@@ -68,44 +63,40 @@ export default function Contact() {
                   </div>
 
                   {/* REEUTILIZABLE ASUNTO  */}
-                  <div>
+                  <div className="md:w-full">
                     <Label htmlFor="asunto">Asunto</Label>
                     <Input
                       id="asunto"
                       name="asunto"
                       type="asunto"
+                      autoComplete="off"
                       onChange={handleChange}
                       value={values.asunto}
                       placeholder="Subject"
                     />
                   </div>
+                </div>
 
-                  {/* REEUTILIZABLE MENSAJE */}
-                  <div>
-                    <Label htmlFor="mensaje">Mensaje</Label>
-                    <Textarea
-                      id="mensaje"
-                      name="mensaje"
-                      type="mensaje"
-                      onChange={handleChange}
-                      value={values.mensaje}
-                      placeholder="Your Message"
-                    />
-                  </div>
-                  {/* -----------------------  */}
-                  {/* BOTON ENVIAR  */}
-                  <div>
-                    {/* <button
-                      type="submit"
-                      onClick={onSubmit}
-                      className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    >
-                      Enviar mensaje
-                    </button> */}
-                    <ButtonSend>Send Message</ButtonSend>
-                  </div>
-                </form>
-              </div>
+                {/* REEUTILIZABLE MENSAJE */}
+                <div>
+                  <Label htmlFor="mensaje">Mensaje</Label>
+                  <Textarea
+                    id="mensaje"
+                    name="mensaje"
+                    type="mensaje"
+                    onChange={handleChange}
+                    value={values.mensaje}
+                    placeholder="Your Message"
+                  />
+                </div>
+                {/* -----------------------  */}
+                {/* BOTON ENVIAR  */}
+                <div>
+                  <ButtonSend type="submit" onClick={onSubmit}>
+                    Send Message
+                  </ButtonSend>
+                </div>
+              </form>
             </div>
           </div>
         </div>
