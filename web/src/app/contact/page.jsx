@@ -2,6 +2,31 @@
 import React, { useState } from "react";
 import { sendContactForm } from "../lib/api";
 import { Input, Label, Textarea, ButtonSend } from "@/app/components/ui";
+import { motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const animation = {
+  hidden: {
+    opacity: 0,
+    x: 30,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 const initValues = { email: "", asunto: "", mensaje: "" };
 const initState = { values: initValues };
@@ -37,10 +62,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col h-full md:justify-center">
-      <h2 className="text-center text-[32px] pb-6 text-terciary">
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      animate="show"
+      className="flex flex-col h-full md:justify-center"
+    >
+      <motion.h2
+        variants={animation}
+        className="text-center text-[32px] pb-6 text-terciary"
+      >
         Escribime para estar en contacto
-      </h2>
+      </motion.h2>
 
       <section className="">
         <div>
@@ -49,7 +82,7 @@ export default function Contact() {
               <form action="#" method="POST" className="space-y-6">
                 <div className="flex flex-col lg:flex-row lg:space-x-2 md:justify-center ">
                   {/* REEUTILIZABLE EMAIL  */}
-                  <div className="md:w-full">
+                  <motion.div variants={animation} className="md:w-full">
                     <Label htmlFor="email">Email</Label>
                     <Input
                       id="email"
@@ -60,10 +93,10 @@ export default function Contact() {
                       value={values.email}
                       placeholder="Your Email"
                     />
-                  </div>
+                  </motion.div>
 
                   {/* REEUTILIZABLE ASUNTO  */}
-                  <div className="md:w-full">
+                  <motion.div variants={animation} className="md:w-full">
                     <Label htmlFor="asunto">Asunto</Label>
                     <Input
                       id="asunto"
@@ -74,11 +107,11 @@ export default function Contact() {
                       value={values.asunto}
                       placeholder="Subject"
                     />
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* REEUTILIZABLE MENSAJE */}
-                <div>
+                <motion.div variants={animation}>
                   <Label htmlFor="mensaje">Mensaje</Label>
                   <Textarea
                     id="mensaje"
@@ -88,19 +121,19 @@ export default function Contact() {
                     value={values.mensaje}
                     placeholder="Your Message"
                   />
-                </div>
+                </motion.div>
                 {/* -----------------------  */}
                 {/* BOTON ENVIAR  */}
-                <div>
+                <motion.div variants={animation} className="pt-5">
                   <ButtonSend type="submit" onClick={onSubmit}>
                     Send Message
                   </ButtonSend>
-                </div>
+                </motion.div>
               </form>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

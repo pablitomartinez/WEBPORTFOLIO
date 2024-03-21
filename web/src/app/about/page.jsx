@@ -1,23 +1,64 @@
+'use client';
 import Image from "next/image";
 import React from "react";
+
+import { motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const animation = {
+  hidden: {
+    opacity: 0,
+    x: 30,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 export default function About() {
   return (
     <div className="flex h-full items-center">
-      <div className="flex flex-col text-center justify-center items-center space-y-6 text-white md:text-left md:justify-items-center md:flex-row">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="show"
+        className="flex flex-col text-center justify-center items-center space-y-6 text-white md:text-left md:justify-items-center md:flex-row"
+      >
         <div className="space-y-5">
-          <h2 className="w-full text-3xl md:text-5xl ">
+          <motion.h2
+            variants={animation}
+            className="w-full text-3xl md:text-5xl "
+          >
             Hi, I'm Pablo Martinez from Argentina, Jujuy,{" "}
-          </h2>
+          </motion.h2>
 
-          <h3 className="w-full text-[14px] md:text-[16px] ">
+          <motion.h3
+            variants={animation}
+            className="w-full text-[14px] md:text-[16px] "
+          >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
             expedita. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Maxime quasi aliquam ratione quas deleniti! Aliquam, nesciunt quasi
             culpa accusantium ducimus iste id sint ratione aperiam ab modi
             inventore in obcaecati.
-          </h3>
-          <div className="flex items-center justify-center md:justify-start object-cover ">
+          </motion.h3>
+          <motion.div
+            variants={animation}
+            className="flex items-center justify-center md:justify-start object-cover "
+          >
             {/* icono DOWNLOAD  */}
             <div className="">
               <svg
@@ -38,10 +79,13 @@ export default function About() {
             </div>
             {/* ------  */}
             <button>DOWNLOAD CV</button>
-          </div>
+          </motion.div>
         </div>
         {/* FOTO  */}
-        <div className="flex flex-none justify-center ">
+        <motion.div
+          variants={animation}
+          className="flex flex-none justify-center "
+        >
           <Image
             className=" rounded-full"
             width={300}
@@ -49,8 +93,8 @@ export default function About() {
             src="/avatar.png"
             alt="foto-perfil"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
