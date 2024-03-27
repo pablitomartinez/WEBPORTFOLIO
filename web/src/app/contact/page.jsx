@@ -70,9 +70,9 @@ export default function Contact() {
     >
       <motion.h2
         variants={animation}
-        className="text-center text-[32px] pb-6 text-terciary"
+        className="text-center text-[25px] lg:text-[44px] pb-6 text-terciary max-w-full mx-auto"
       >
-        Escribime para estar en contacto
+        Quieres trabajar conmigo?
       </motion.h2>
 
       <section className="">
@@ -133,6 +133,22 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        <motion.div
+          className="flex flex-col md:flex-row bottom-0 justify-center pt-20 space-x-2  text-[12px] text-terciary text-center mb-8"
+          variants={animation}
+        >
+          <h3 className="mb-1">
+            E-MAIL:{" "}
+            <span className="text-secondary text-[16px]">
+              {" "}
+              pablitoemartinez666@gmail.com{" "}
+            </span>
+          </h3>
+          <h3>
+            TELEFONO:{" "}
+            <span className="text-secondary text-[16px]">+543884597800</span>
+          </h3>
+        </motion.div>
       </section>
     </motion.div>
   );
