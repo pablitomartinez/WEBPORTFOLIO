@@ -1,11 +1,11 @@
 export function ButtonDownload({ children, ...props }) {
   return (
     <button
-      className="flex items-center justify-center w-full px-10 border-2 py-4 text-base font-medium uppercase  rounded-full text-center text-white transition duration-500 ease-in-out transform md:border-secondary hover:bg-secondary hover:text-primary hover:border-none"
+      className="flex items-center justify-center w-full px-10 border-2 py-4 font-medium uppercase bg-gradient-to-r from-terciary via-secondary to-secondary transition duration-500 ease-in-out transform hover:bg-gradient-to-l hover:from-terciary hover:via-secondary hover:to-secondary rounded-full text-center text-primary bg-secondary  md:border-secondary"
       {...props}
     >
       <svg
-        className="w-8 h-8 mr-2 text-secondary hover:text-primary"
+        className="w-8 h-8 mr-2 text-primary"
         fill="none"
         strokeWidth="1.5"
         stroke="currentColor"

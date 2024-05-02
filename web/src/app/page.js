@@ -1,10 +1,10 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import { ButtonDownload } from "./components/ui";
 // import { motion, AnimatePresence } from "framer-motion";
 // import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import { motion, AnimatePresence } from "framer-motion";
-// import ThreeDFondo from "./components/ThreeDFondo";
+import ThreeDFondo from "./components/ThreeDFondo";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -60,10 +60,21 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi
               expedita.
             </motion.h3>
-            <motion.div variants={animation} className="flex md:justify-start">
-              <ButtonDownload>
-                <Link href="/contact">HIRE ME</Link>
+            <motion.div
+              variants={animation}
+              className="md:justify-start"
+            >
+
+              <ButtonDownload >
+                <a
+                  href="/cv/PabloMartinez-CV.pdf"
+                  download="CV-PabloMartinez.pdf"
+                  // className="z-10 relative"
+                >
+                  HIRE ME
+                </a>
               </ButtonDownload>
+              
             </motion.div>
           </motion.div>
         </main>

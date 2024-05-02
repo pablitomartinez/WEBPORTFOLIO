@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { sendContactForm } from "../lib/api";
-import { Input, Label, Textarea, ButtonSend } from "@/app/components/ui";
+import { Input, Label, Textarea, ButtonSend } from "../components/ui";
 import { motion } from "framer-motion";
+import ThreeDFondo from "../components/ThreeDFondo";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -124,8 +125,9 @@ export default function Contact() {
                 </motion.div>
                 {/* -----------------------  */}
                 {/* BOTON ENVIAR  */}
-                <motion.div variants={animation} className="pt-5">
+                <motion.div variants={animation} className="pt-5 flex justify-center items-center">
                   <ButtonSend type="submit" onClick={onSubmit}>
+                    {/* <ThreeDFondo />  */}
                     Send Message
                   </ButtonSend>
                 </motion.div>

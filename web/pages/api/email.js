@@ -104,7 +104,7 @@ const handler = async (req, res) => {
     const data = req.body;
     // si todos los campos estan completos
     if (!data.email || !data.asunto || !data.mensaje) {
-      return res.status(400).json({ message: "Bad requesttttttttttt" });
+      return res.status(400).json({ message: "Bad request" });
     } // si todo esta bien enviamos info
     try {
       await transporter.sendMail({
