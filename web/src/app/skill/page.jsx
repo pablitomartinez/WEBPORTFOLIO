@@ -47,24 +47,28 @@ export default function Skill() {
       variants={variants}
       initial="hidden"
       animate="show"
-      className="flex flex-col md:flex-row space-y-4 space-x-4 w-full"
+      className="flex flex-col md:flex-row md:space-x-4 w-full"
     >
-      {/* derecha */}
-      <div className="w-full md:w-[70%] text-terciary  ">
-        <motion.p variants={animation} className="text-[16px] md:w-[80%] mb-10 ">
+      {/* izq */}
+      <div className=" w-full md:w-[70%] text-terciary  ">
+        <motion.p
+          variants={animation}
+          className="text-[16px] md:w-[80%] mb-10 "
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cum
           modi iusto tempore rem. Sequi repellat deserunt recusandae commodi
           dolor.
         </motion.p>
         {/* lista de lenguajes  */}
-        <motion.div variants={animation} className="space-y-6">
+        <motion.div variants={animation} className="space-y-6 text-[18px] ">
           {/* item  */}
           <div>
-            <h3>Bootcamp Henry</h3>
+            <h3>Bootcamp Henry</h3> 
+            <span className="text-[14px] text-secondary" >Javascript, React, Node Js, MySQL, Scrum</span>
           </div>
           {/* item  */}
           <div>
-            <h3>Bootcamp Dise;o UX/UI</h3>
+            <h3>Bootcamp Diseño UX/UI</h3>
           </div>
           {/* item  */}
           <div>
@@ -89,8 +93,8 @@ export default function Skill() {
         </motion.div>
       </div>
       {/* ----------------------  */}
-      {/* izquierda  */}
-      <div className="w-[29%] space-y-6">
+      {/* der  */}
+      <div className="w-[29%] space-y-6 pt-0">
         {skills.map((skill, i) => {
           return (
             <motion.p
