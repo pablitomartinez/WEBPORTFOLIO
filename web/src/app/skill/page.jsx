@@ -22,7 +22,7 @@ const variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -36,7 +36,7 @@ const animation = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
