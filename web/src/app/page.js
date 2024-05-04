@@ -35,7 +35,7 @@ export default function Home() {
     <>
       {/* <ThreeDFondo /> */}
       <AnimatePresence>
-        <main className="flex h-full">
+        <main className="flex h-full justify-center">
           <motion.div
             // initial={{ opacity: 0, y: 15 }}
             // animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function Home() {
             </motion.h3>
             <motion.div
               variants={animation}
-              className="md:justify-start"
+              className="md:justify-start animate-bounce animate-infinite animate-ease-out"
             >
 
               <ButtonDownload >
