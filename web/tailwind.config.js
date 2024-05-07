@@ -7,6 +7,27 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        primary:{
+          DEFAULT: "#131624",
+        },
+
+        secondary:{
+          DEFAULT: "#92d79a"
+        },
+
+        terciary:{
+          DEFAULT: "#BEC8CB"
+        },
+
+        room:{
+          DEFAULT: "#3b67a6"
+        },
+
+        fifth:{
+          DEFAULT: "#69b7e0"
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -14,5 +35,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ["prettier-plugin-tailwindcss"],
 };
