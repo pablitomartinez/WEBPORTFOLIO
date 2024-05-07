@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en">
         <body className={`${roboto_slab.className} antialiased bg-primary  `}>
-          {/* <ThreeDFondo /> */}
+          <ThreeDFondo />
 
           <div className="flex h-screen flex-col md:max-w-[100%] md:justify-center md:mx-auto md:flex-row md:overflow-hidden">
             <div className="w-full flex-none md:w-64">
